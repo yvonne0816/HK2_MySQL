@@ -97,8 +97,6 @@ FROM (((orderdetail as ord  inner join food as fo on ord.food_id = fo.food_id)
 inner join restaurant as rt on rt.restaurant_id = fo.restaurant_id)
 inner join orderfood as orf on ord.orderfood_id = orf.orderfood_id)
 inner join customer as cu on orf.customer_id = cu.customer_id order by cu.customer_id;
-
-
 select cu.customer_name,sum(fo.food_price*ord.quantity) as order_total_price
 from ((orderdetail as ord  inner join food as fo on ord.food_id = fo.food_id)
 inner join orderfood as orf on ord.orderfood_id = orf.orderfood_id)
